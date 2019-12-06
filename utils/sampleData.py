@@ -26,12 +26,6 @@ def generate_set_of_files(array, limit=6.4e+7, timestamp=True):
         current_files.append(last_item)
         current_size += last_item_size
         i += 1
-    timstr = ""
-    if timestamp:
-        timestr = time.strftime("(%Y%m%d-%H%M%S)")
-    with open('sample{}.dat'.format(timstr), 'w+') as fp:
-        # Write the name of the chosen files
-        [fp.write("%s\n" % i) for i in current_files]
     return current_files
 
 
